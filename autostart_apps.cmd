@@ -11,6 +11,9 @@ SET keepass_path=c:\Program Files\KeePass Password Safe 2\KeePass.exe
 rem vscode
 SET vscode_path=Microsoft.VisualStudioCode
 
+rem browser
+SET browser=chrome
+SET pages=google.com https://devopscube.com/
 
 @ECHO OFF
 CLS
@@ -22,11 +25,13 @@ ECHO 5.Keepass
 ECHO 6.Microsoft Outlook
 ECHO 7.Microsoft Teams
 ECHO 8.Microsoft Office Onenote
+ECHO 9.Browser
 ECHO.
 
-CHOICE /T 5 /D 1 /C 12345678 /M "After 5sec Start all will be choosen. Enter your choice:"
+CHOICE /T 5 /D 1 /C 123456789 /M "After 5sec Start all will be choosen. Enter your choice:"
 
 :: Note - list ERRORLEVELS in decreasing order
+IF ERRORLEVEL 9 GOTO browser
 IF ERRORLEVEL 8 GOTO onenote
 IF ERRORLEVEL 7 GOTO Teams
 IF ERRORLEVEL 6 GOTO Outlook
@@ -46,6 +51,7 @@ call :Keepass
 call :Outlook
 call :Teams
 call :onenote
+call :browser
 
 :Pageant
 start /b "" "%pageant_path%" %key_paths%
@@ -73,4 +79,8 @@ exit /b
 
 :vscode
 explorer.exe shell:appsFolder\"%vscode_path%"
+exit /b
+
+:browser
+start /b "" "%browser%" %pages%
 exit /b

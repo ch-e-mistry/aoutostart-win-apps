@@ -11,6 +11,8 @@ Simple CMD script to start automatically applications beginning of the Working h
       - [OpenVPN - Variables](#openvpn---variables)
     - [KeePass](#keepass)
       - [KeePass - Variables](#keepass---variables)
+    - [browser](#browser)
+      - [browser - Variables](#browser---variables)
     - [Microsoft products](#microsoft-products)
       - [Microsoft Outlook](#microsoft-outlook)
       - [Microsoft Teams](#microsoft-teams)
@@ -55,6 +57,16 @@ These are the main applications used by me for everyday work. Why I didn't run i
 #### KeePass - Variables
 
 `KeePass_path` --> Path to the executable to start it.
+
+### browser
+
+Choose your browser to start your desired pages. By default configured to use `chrome`.
+
+#### browser - Variables
+
+`browser` --> Your desired browser, like edge, chrome, firefox.
+
+`pages` --> pages will be opened by your browser.
 
 ### Microsoft products
 
